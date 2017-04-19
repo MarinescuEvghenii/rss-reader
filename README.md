@@ -2,7 +2,7 @@
 A simple react-redux application for RSS feeds
 
 ### Disclaimer
-This application can be unstable in IE or other old browsers. The main goal was to have fun and don't waste time on fixing styles for browser which not support flexbox or other features.
+This application can be unstable in IE or other old browsers. The main goal was to have fun and don't waste time on fixing styles for browser which not support flexbox or other features. Application was tested in latest Chrome, Mozilla, Opera, Safari on OSX.
 Thank you for understanding.
 
 ### Installing dependencies
