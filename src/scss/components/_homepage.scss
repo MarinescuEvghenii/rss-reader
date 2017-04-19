@@ -1,0 +1,21 @@
+.homepage {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: $color-light;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	padding: 15px 20px;
+
+	&__icon {
+		font-size: 20px;
+	}
+
+	&--selected {
+		color: $color-accent;
+	}
+
+	&:hover {
+		background-color: darken($color-dark, 15);
+	}
+}

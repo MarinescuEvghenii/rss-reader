@@ -1,0 +1,14 @@
+.layout {
+	display: flex;
+	height: 100%;
+
+	&__sidebar {
+		height: 100%;
+		flex: 3;
+	}
+
+	&__content {
+		height: 100%;
+		flex: 12;
+	}
+}

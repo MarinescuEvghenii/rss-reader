@@ -1,0 +1,17 @@
+.favorite {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: $color-accent;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	padding: 15px 20px;
+
+	&__icon {
+		font-size: 20px;
+	}
+
+	&:hover {
+		background-color: darken($color-dark, 15);
+	}
+}

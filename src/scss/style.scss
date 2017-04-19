@@ -1,0 +1,24 @@
+@import "vars";
+@import "vendor";
+@import "colors";
+@import "components/index";
+
+html, body, #application {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body {
+	font: $site-font;
+	color: $color-dark;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+	color: $color-dark;
+	text-decoration: none;
+}

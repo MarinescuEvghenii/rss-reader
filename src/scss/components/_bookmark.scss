@@ -1,0 +1,22 @@
+.bookmark {
+	display: inline-flex;
+	vertical-align: top;
+	align-items: center;
+	justify-content: center;
+	color: $color-dark;
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s;
+	border-radius: 50%;
+	width: 34px;
+	height: 34px;
+	border: 1px solid $color-dark;
+
+	&__icon {
+		font-size: 16px;
+	}
+
+	&:hover {
+		color: $color-light;
+		background-color: $color-dark;
+	}
+}
