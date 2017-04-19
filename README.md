@@ -21,5 +21,5 @@ Thank you for understanding.
 ### Index
 ```/dist/index.html``` or use ```/dist/dev.html``` for development
 
-### Screenshot
+### [Demo](https://goo.gl/aKj8dc)
 ![screenshot](https://raw.githubusercontent.com/MarinescuEvghenii/rss-reader/master/screenshot.jpg)
