@@ -2,11 +2,11 @@
 A simple RSS reader application
 
 ### Disclaimer
-This application can be installed in IE or other old browsers because the main goal was to have fun and do not waste time on fixing styles for browser which not support flexbox or other features.
+This application can be unstable in IE or other old browsers. The main goal was to have fun and don't waste time on fixing styles for browser which not support flexbox or other features.
 Thank you for understanding.
 
 ### Installing dependencies
-```yarn add``` or ```npm install```
+```yarn``` or ```npm install```
 
 ### Compiling
 ###### Compile styles:

@@ -1,5 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
 var livereload = require('gulp-livereload');
 
 var config = {
@@ -29,6 +31,7 @@ console.log(config.icons);
 gulp.task('sass', function () {
   return gulp.src(config.style.entry)
 		.pipe(sass(config.sass).on('error', sass.logError))
+		.pipe(postcss([ autoprefixer() ]))
 		.pipe(gulp.dest(config.style.dest))
 		.pipe(livereload());
 });
