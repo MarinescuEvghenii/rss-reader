@@ -27002,6 +27002,7 @@ var reducer = exports.reducer = function reducer() {
 				_state = [action.bookmark].concat(_toConsumableArray(state));
 			}
 
+			// Yes, I know that function should be pure!
 			window.localStorage.setItem('bookmarks', JSON.stringify(_state));
 			return _state;
 
@@ -27397,27 +27398,27 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 // Get saved home page
-var homepage = window.localStorage.getItem('homepage') || _const2.default.categories[0].id;
+var homePageID = window.localStorage.getItem('homepage') || _const2.default.categories[0].id;
 
 // Load home page
-homepage && _const2.default.categories.map(function (category) {
-	if (category.id === homepage) {
-		return category.homepage = true;
+var categories = _const2.default.categories.map(function (category) {
+	if (category.id === homePageID) {
+		return Object.assign({}, category, {
+			homepage: true
+		});
 	} else {
-		return category.homepage = false;
+		return Object.assign({}, category, {
+			homepage: false
+		});
 	}
 });
 
 var reducer = exports.reducer = function reducer() {
-	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _const2.default.categories;
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : categories;
 	var action = arguments[1];
 
-	var _state = [].concat(_toConsumableArray(state));
 
 	switch (action.type) {
-		case 'category/load':
-			return action.categories;
-
 		case 'category/add':
 			return [action.category].concat(_toConsumableArray(state));
 
@@ -27427,27 +27428,34 @@ var reducer = exports.reducer = function reducer() {
 			});
 
 		case 'category/default':
-			_state.map(function (category) {
+			return state.map(function (category) {
 				if (category.id === action.category.id) {
+
+					// Yes, I know that function should be pure!
 					window.localStorage.setItem('homepage', category.id);
-					return category.homepage = true;
+
+					return Object.assign({}, category, {
+						homepage: true
+					});
 				} else {
-					return category.homepage = false;
+					return Object.assign({}, category, {
+						homepage: false
+					});
 				}
 			});
-
-			return _state;
 
 		case 'category/current':
-			_state.map(function (category) {
+			return state.map(function (category) {
 				if (category.id === action.category.id) {
-					return category.selected = true;
+					return Object.assign({}, category, {
+						selected: true
+					});
 				} else {
-					return category.selected = false;
+					return Object.assign({}, category, {
+						selected: false
+					});
 				}
 			});
-
-			return _state;
 
 		default:
 			return state;
@@ -27611,6 +27619,7 @@ var reducer = exports.reducer = function reducer() {
 
 			var _state = Object.assign({}, state, _defineProperty({}, action.id, !state[action.id]));
 
+			// Yes, I know that function should be pure!
 			window.localStorage.setItem('favorites', JSON.stringify(_state));
 
 			return _state;
@@ -27985,14 +27994,21 @@ var HomeButton = function (_React$Component) {
 	_inherits(HomeButton, _React$Component);
 
 	_createClass(HomeButton, [{
+		key: 'homePage',
+		get: function get() {
+			return this.props.categories.find(function (category) {
+				return category.homepage;
+			});
+		}
+	}, {
 		key: 'title',
 		get: function get() {
-			return this.props.category.homepage ? 'This is your home page' : 'Set as home page';
+			return this.props.category.id === this.homePage.id ? 'This is your home page' : 'Set as home page';
 		}
 	}, {
 		key: 'className',
 		get: function get() {
-			return this.props.category.homepage ? 'homepage homepage--selected' : 'homepage';
+			return this.props.category.id === this.homePage.id ? 'homepage homepage--selected' : 'homepage';
 		}
 	}]);
 

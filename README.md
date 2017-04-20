@@ -1,5 +1,5 @@
 # Reuters RSS reader (beta)
-A simple react-redux application for RSS feeds
+A simple react-redux RSS application.
 
 ### Disclaimer
 This application can be unstable in IE or other old browsers. The main goal was to have fun and don't waste time on fixing styles for browser which not support flexbox or other features. Application was tested in latest Chrome, Mozilla, Opera, Safari on OSX.
