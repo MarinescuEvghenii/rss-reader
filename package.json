@@ -7,7 +7,7 @@
 	"keywords": [],
 	"repository": {},
 	"scripts": {
-		"scripts": "node_modules/.bin/webpack",
+		"scripts": "node_modules/.bin/webpack --optimize-minimize",
 		"scripts:dev": "node_modules/.bin/webpack-dev-server --hot --port 35728",
 		"styles": "node_modules/.bin/gulp",
 		"styles:dev": "node_modules/.bin/gulp watch"
