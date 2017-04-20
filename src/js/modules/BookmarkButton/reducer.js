@@ -20,6 +20,7 @@ export const reducer = (state = cache, action) => {
 				_state = [action.bookmark, ...state];
 			}
 
+			// Yes, I know that function should be pure!
 			window.localStorage.setItem('bookmarks', JSON.stringify(_state));
 			return _state;
 
